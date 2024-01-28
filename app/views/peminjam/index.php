@@ -43,7 +43,7 @@
                 </form>
                 <table class="table table-bordered">
                     <thead>
-                        <tr>
+                        <tr style="text-align: center;">
                             <th style="width: 10px">No</th>
                             <th>Nama Peminjam</th>
                             <th>Alamat</th>
@@ -63,9 +63,9 @@
                                 <td><?= $row['no_telp']; ?></td>
                                 <td><?= $row['email']; ?></td>
                                 <td><?= $row['asal_peminjam']; ?></td>
-                                <td>
+                                <td style="text-align: center;">
                                     <a href="<?= base_url; ?>/peminjam/edit/<?= $row['id_peminjam'] ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                                    <a href="<?= base_url; ?>/peminjam/hapus/<?= $row['id_peminjam'] ?>" class="btn btn-danger" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
+                                    <a href="<?= base_url; ?>/peminjam/hapus/<?= $row['id_peminjam'] ?>" class="btn btn-warning" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php $no++;

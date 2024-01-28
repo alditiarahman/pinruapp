@@ -39,7 +39,7 @@
                 </form>
                 <table class="table table-bordered">
                     <thead>
-                        <tr>
+                        <tr style="text-align: center;">
                             <th style="width: 10px">No</th>
                             <th>Nama Ruangan</th>
                             <th>Kapasitas</th>
@@ -55,9 +55,9 @@
                                 <td><?= $row['nama_ruangan']; ?></td>
                                 <td><?= $row['kapasitas']; ?></td>
                                 <td><?= $row['fasilitas']; ?></td>
-                                <td>
+                                <td style="text-align: center;">
                                     <a href="<?= base_url; ?>/ruangan/edit/<?= $row['id_ruangan'] ?>" class="btn btn-info "><i class="fas fa-edit"></i></a>
-                                    <a href="<?= base_url; ?>/ruangan/hapus/<?= $row['id_ruangan'] ?>" class="btn btn-danger" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
+                                    <a href="<?= base_url; ?>/ruangan/hapus/<?= $row['id_ruangan'] ?>" class="btn btn-warning" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php $no++;

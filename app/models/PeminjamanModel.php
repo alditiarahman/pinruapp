@@ -34,6 +34,17 @@ class PeminjamanModel
 
     public function tambahPeminjaman($data)
     {
+        // Check if there is already a booking with the same date
+        $query = "SELECT COUNT(*) AS count FROM peminjaman WHERE tanggal_pinjam = :tanggal_pinjam";
+        $this->db->query($query);
+        $this->db->bind('tanggal_pinjam', $data['tanggal_pinjam']);
+        $result = $this->db->single();
+
+        if ($result['count'] > 0) {
+            // If there is already a booking with the same date, return an error
+            return -1; // Or you can throw an exception here
+        }
+
         $query = "INSERT INTO peminjaman(id_ruangan, id_petugas, id_peminjam, tanggal_pinjam, surat_permohonan, status) 
                 VALUES (:id_ruangan, :id_petugas, :id_peminjam, :tanggal_pinjam, :surat_permohonan, :status)";
         $this->db->query($query);
@@ -41,7 +52,22 @@ class PeminjamanModel
         $this->db->bind('id_petugas', $data['id_petugas']);
         $this->db->bind('id_peminjam', $data['id_peminjam']);
         $this->db->bind('tanggal_pinjam', $data['tanggal_pinjam']);
-        $this->db->bind('surat_permohonan', $data['surat_permohonan']); // tambahkan binding untuk surat_permohonan
+
+        // Handle file upload
+        $file = $_FILES['surat_permohonan'];
+        $fileName = $file['name'];
+        $fileTmpName = $file['tmp_name'];
+        $fileError = $file['error'];
+        $fileSize = $file['size'];
+
+        if ($fileError === UPLOAD_ERR_OK) {
+            $fileDestination = 'uploads/' . $fileName;
+            move_uploaded_file($fileTmpName, $fileDestination);
+            $this->db->bind('surat_permohonan', $fileDestination);
+        } else {
+            $this->db->bind('surat_permohonan', '');
+        }
+        // $this->db->bind('surat_permohonan', $data['surat_permohonan']); // tambahkan binding untuk surat_permohonan
         $this->db->bind('status', $data['status']);
         $this->db->execute();
 
@@ -62,7 +88,7 @@ class PeminjamanModel
         $this->db->bind('id_ruangan', $data['id_ruangan']);
         $this->db->bind('id_petugas', $data['id_petugas']);
         $this->db->bind('id_peminjam', $data['id_peminjam']);
-        $this->db->bind('tanggal_peminjaman', $data['tanggal_peminjaman']);
+        $this->db->bind('tanggal_pinjam', $data['tanggal_pinjam']);
         $this->db->bind('surat_permohonan', $data['surat_permohonan']); // tambahkan binding untuk surat_permohonan
         $this->db->bind('status', $data['status']);
         $this->db->execute();
@@ -73,6 +99,24 @@ class PeminjamanModel
     public function deletePeminjaman($id)
     {
         $this->db->query('DELETE FROM ' . $this->table . ' WHERE id_peminjaman=:id_peminjaman');
+        $this->db->bind('id_peminjaman', $id);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    public function setujuiPeminjaman($id)
+    {
+        $this->db->query('UPDATE ' . $this->table . ' SET status=\'Disetujui\' WHERE id_peminjaman=:id_peminjaman');
+        $this->db->bind('id_peminjaman', $id);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    public function tolakPeminjaman($id)
+    {
+        $this->db->query('UPDATE ' . $this->table . ' SET status=\'Ditolak\' WHERE id_peminjaman=:id_peminjaman');
         $this->db->bind('id_peminjaman', $id);
         $this->db->execute();
 

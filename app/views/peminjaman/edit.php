@@ -19,7 +19,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" action="<?= base_url; ?>/peminjaman/updatePeminjaman" method="POST">
+            <form role="form" action="<?= base_url; ?>/peminjaman/updatePeminjaman" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id_peminjaman" value="<?= $data['peminjaman']['id_peminjaman']; ?>">
                 <div class="card-body">
                     <div class="form-group">
@@ -67,7 +67,7 @@
                     </div>
                     <div class="form-group">
                         <label>Surat Permohonan</label>
-                        <input type="file" class="form-control" name="surat_permohonan" value="<?= $data['peminjaman']['surat_permohonan']; ?>">
+                        <input readonly type="file" class="form-control" name="surat_permohonan" value="<?= $data['peminjaman']['surat_permohonan']; ?>">
                     </div>
                     <div class="form-group">
                         <label>Status</label>

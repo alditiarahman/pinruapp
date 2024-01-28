@@ -59,46 +59,12 @@ class Peminjaman extends Controller
 
     public function simpanPeminjaman()
     {
-        // if ($this->model('PeminjamanModel')->tambahPeminjaman($_POST) > 0) {
-        //     Flasher::setMessage('Berhasil', 'ditambahkan', 'success');
-        //     header('location: ' . base_url . '/peminjaman');
-        //     exit;
-        // } else {
-        //     Flasher::setMessage('Gagal', 'ditambahkan', 'danger');
-        //     header('location: ' . base_url . '/peminjaman');
-        //     exit;
-        // }
-
-        if ($_FILES['surat_permohonan']['error'] === UPLOAD_ERR_OK) {
-            // Tentukan lokasi penyimpanan file
-            $uploadDir = '../../public/uploads/';
-            // Buat nama unik untuk file
-            $fileName = uniqid() . '_' . $_FILES['surat_permohonan']['name'];
-            // Path lengkap untuk menyimpan file
-            $uploadPath = $uploadDir . $fileName;
-
-            // Pindahkan file yang diunggah ke folder upload
-            if (move_uploaded_file($_FILES['surat_permohonan']['tmp_name'], $uploadPath)) {
-                // File berhasil diunggah, tambahkan peminjaman ke database
-                $_POST['surat_permohonan'] = $fileName;
-                if ($this->model('PeminjamanModel')->tambahPeminjaman($_POST) > 0) {
-                    Flasher::setMessage('Berhasil', 'ditambahkan', 'success');
-                    header('location: ' . base_url . '/peminjaman');
-                    exit;
-                } else {
-                    Flasher::setMessage('Gagal', 'ditambahkan', 'danger');
-                    header('location: ' . base_url . '/peminjaman');
-                    exit;
-                }
-            } else {
-                // Jika gagal memindahkan file
-                Flasher::setMessage('Gagal', 'memindahkan file', 'danger');
-                header('location: ' . base_url . '/peminjaman');
-                exit;
-            }
+        if ($this->model('PeminjamanModel')->tambahPeminjaman($_POST) > 0) {
+            Flasher::setMessage('Berhasil', 'ditambahkan', 'success');
+            header('location: ' . base_url . '/peminjaman');
+            exit;
         } else {
-            // Jika ada masalah saat mengunggah file
-            Flasher::setMessage('Gagal', 'upload file', 'danger');
+            Flasher::setMessage('Gagal', 'ditambahkan', 'danger');
             header('location: ' . base_url . '/peminjaman');
             exit;
         }
@@ -125,6 +91,32 @@ class Peminjaman extends Controller
             exit;
         } else {
             Flasher::setMessage('Gagal', 'dihapus', 'danger');
+            header('location: ' . base_url . '/peminjaman');
+            exit;
+        }
+    }
+
+    public function setuju($id)
+    {
+        if ($this->model('PeminjamanModel')->setujuiPeminjaman($id) > 0) {
+            Flasher::setMessage('Berhasil', 'disetujui', 'success');
+            header('location:' . base_url . '/peminjaman');
+            exit;
+        } else {
+            Flasher::setMessage('Gagal', 'disetujui', 'danger');
+            header('location: ' . base_url . '/peminjaman');
+            exit;
+        }
+    }
+
+    public function tolak($id)
+    {
+        if ($this->model('PeminjamanModel')->tolakPeminjaman($id) > 0) {
+            Flasher::setMessage('Berhasil', 'ditolak', 'success');
+            header('location:' . base_url . '/peminjaman');
+            exit;
+        } else {
+            Flasher::setMessage('Gagal', 'ditolak', 'danger');
             header('location: ' . base_url . '/peminjaman');
             exit;
         }

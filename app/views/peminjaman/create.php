@@ -19,7 +19,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form role="form" action="<?= base_url; ?>/peminjaman/simpanPeminjaman" method="POST">
+            <form role="form" action="<?= base_url; ?>/peminjaman/simpanPeminjaman" method="POST" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="form-group">
                         <label>Ruangan</label>

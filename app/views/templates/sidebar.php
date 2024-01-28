@@ -70,14 +70,14 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="<?= base_url; ?>/pembatalan" class="nav-link">
                             <i class="nav-icon fas fa-user-times"></i>
                             <p>
                                 Data Pembatalan
                             </p>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item text-uppercase font-weight-bold pl-2">
                         <hr class="border-dark-grey">Lainnya
                     </li>

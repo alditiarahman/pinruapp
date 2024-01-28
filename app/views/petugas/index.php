@@ -40,7 +40,7 @@
                 </form>
                 <table class="table table-bordered">
                     <thead>
-                        <tr>
+                        <tr style="text-align: center;">
                             <th style="width: 10px">No</th>
                             <th>ID Petugas</th>
                             <th>Nama Petugas</th>
@@ -60,9 +60,9 @@
                                 <td><?= $row['jabatan']; ?></td>
                                 <td><?= $row['no_telp']; ?></td>
                                 <td><?= $row['email']; ?></td>
-                                <td>
+                                <td style="text-align: center;">
                                     <a href="<?= base_url; ?>/petugas/edit/<?= $row['id_petugas'] ?>" class="btn btn-info "><i class="fas fa-edit"></i></a>
-                                    <a href="<?= base_url; ?>/petugas/hapus/<?= $row['id_petugas'] ?>" class="btn btn-danger" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
+                                    <a href="<?= base_url; ?>/petugas/hapus/<?= $row['id_petugas'] ?>" class="btn btn-warning" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php $no++;

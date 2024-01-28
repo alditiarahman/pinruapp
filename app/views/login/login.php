@@ -19,17 +19,46 @@
     <link rel="stylesheet" href="<?= base_url; ?>/dist/css/adminlte.min.css">
     <!-- Google Font:Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- Custom style -->
+    <style>
+        .login-box {
+            width: 360px;
+            /* sesuaikan lebar sesuai kebutuhan */
+            margin: 0 auto;
+            margin-top: 50px;
+            /* jarak dari atas */
+        }
+
+        .login-card-body {
+            padding: 20px;
+        }
+
+        .login-logo {
+            font-size: 24px;
+            /* sesuaikan ukuran font sesuai kebutuhan */
+            margin-bottom: 15px;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <div class="login-logo">
-            <b>PinRu</b>App
-        </div>
-        <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Silakan login terlebih dahulu.</p>
+                <div class="logo-container">
+                    <img src="dist/img/logo-bawaslu.png" alt="Logo" width="100px"> <!-- Ganti path/to/logo.png dengan path menuju logo Anda -->
+                </div>
+                <!-- /.logo-container -->
+                <div class="login-logo">
+                    <b>PinRu</b>App
+                </div>
+                <!-- /.login-logo -->
+                <p class="login-box-msg">Selamat Datang di Aplikasi Peminjaman Ruangan</p>
                 <form action="<?= base_url; ?>/login/prosesLogin" method="post">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="ketikkan username.." name="username">
@@ -49,8 +78,8 @@
                     </div>
                     <div class="row">
                         <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary btn-block"><b>Login</b></button>
                         </div>
                         <!-- /.col -->
                     </div>

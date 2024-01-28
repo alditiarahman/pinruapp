@@ -42,7 +42,7 @@
                 </form>
                 <table class="table table-bordered">
                     <thead>
-                        <tr>
+                        <tr style="text-align: center;">
                             <th style="width: 10px">No</th>
                             <th>Ruangan</th>
                             <th>Petugas</th>
@@ -62,11 +62,19 @@
                                 <td><?= $row['nama_petugas']; ?></td>
                                 <td><?= $row['nama_peminjam']; ?></td>
                                 <td><?= $row['tanggal_pinjam']; ?></td>
-                                <td><?= $row['surat_permohonan']; ?></td>
+                                <td style="text-align: center;">
+                                    <a href="<?= $row['surat_permohonan'] ?>" target="_blank" class="btn btn-outline-dark" role="button"><i class="fas fa-eye"></i></a>
+                                </td>
                                 <td><?= $row['status']; ?></td>
-                                <td>
-                                    <a href="<?= base_url; ?>/peminjaman/edit/<?= $row['id_peminjaman'] ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                                    <a href="<?= base_url; ?>/peminjaman/hapus/<?= $row['id_peminjaman'] ?>" class="btn btn-danger" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
+                                <td style="text-align: center;">
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a href="<?= base_url; ?>/peminjaman/edit/<?= $row['id_peminjaman'] ?>" class="btn btn-info" role="button"><i class="fas fa-edit"></i></a>
+                                        <a href="<?= base_url; ?>/peminjaman/hapus/<?= $row['id_peminjaman'] ?>" class="btn btn-warning" role="button" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
+                                        <?php if ($row['status'] === 'Menunggu') : ?>
+                                            <a href="<?= base_url; ?>/peminjaman/setuju/<?= $row['id_peminjaman'] ?>" class="btn btn-success" role="button" onclick="return confirm('Permohonan Disetujui?');"><i class="fas fa-check"></i></a>
+                                            <a href="<?= base_url; ?>/peminjaman/tolak/<?= $row['id_peminjaman'] ?>" class="btn btn-danger" role="button" onclick="return confirm('Permohonan Ditolak?');"><i class="fas fa-times"></i></a>
+                                        <?php endif; ?>
+                                    </div>
                                 </td>
                             </tr>
                         <?php $no++;

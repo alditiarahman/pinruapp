@@ -78,7 +78,7 @@
             <p>Telepon: (0511) 6726 437 | Email: set.kalsel@gmail.go.id</p>
         </div>
 
-        <h1 style="text-align: center;">Laporan Peminjaman</h1>
+        <h1 style="text-align: center;">LAPORAN PEMINJAMAN</h1>
         <table class="table">
             <thead>
                 <tr>
@@ -86,9 +86,8 @@
                     <th>Ruangan</th>
                     <th>Petugas</th>
                     <th>Peminjam</th>
-                    <th>Tanggal Peminjaman</th>
-                    <th>Jam Mulai</th>
-                    <th>Jam Selesai</th>
+                    <th>Tanggal Pinjam</th>
+                    <!-- <th>Surat Permohonan</th> -->
                     <th>Status</th>
                 </tr>
             </thead>
@@ -97,12 +96,11 @@
                 <?php foreach ($data['peminjaman'] as $row) : ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $row['id_ruangan']; ?></td>
+                        <td><?= $row['nama_ruangan']; ?></td>
                         <td><?= $row['nama_petugas']; ?></td>
                         <td><?= $row['nama_peminjam']; ?></td>
-                        <td><?= $row['tanggal_peminjaman']; ?></td>
-                        <td><?= $row['jam_mulai']; ?></td>
-                        <td><?= $row['jam_selesai']; ?></td>
+                        <td><?= $row['tanggal_pinjam']; ?></td>
+                        <!-- <td><?= $row['surat_permohonan']; ?></td> -->
                         <td><?= $row['status']; ?></td>
                     </tr>
                 <?php $no++;
