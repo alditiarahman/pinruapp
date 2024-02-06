@@ -60,7 +60,7 @@
                                 <td><?= $row['username']; ?></td>
                                 <td>
                                     <a href="<?= base_url; ?>/user/edit/<?= $row['id'] ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                                    <a href="<?= base_url; ?>/user/hapus/<?= $row['id'] ?>" class="btn btn-danger" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
+                                    <a href="<?= base_url; ?>/user/hapus/<?= $row['id'] ?>" class="btn btn-warning" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php

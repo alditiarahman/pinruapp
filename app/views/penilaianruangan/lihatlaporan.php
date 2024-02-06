@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Laporan Peminjaman</title>
+    <title>Laporan Penilaian Ruangan</title>
 
     <link rel="icon" type="image/x-icon" href="<?= base_url; ?>/dist/img/logo-bawaslu.png">
 
@@ -71,6 +71,7 @@
 <body class="A4 potrait">
     <section class="sheet">
         <!-- Header/Kop Surat -->
+        <!-- Header/Kop Surat -->
         <div class="header">
             <!-- Logo -->
             <img src="<?= base_url ?>/dist/img/logo-bawaslu.png" alt="Logo" style="width: 90px; height: auto; float: left; margin-right: 30px;">
@@ -87,30 +88,26 @@
             <hr style="border-top: 3px solid black; margin-top: 10px; margin-bottom: 10px;">
         </div>
 
-        <h1 style="text-align: center;">LAPORAN PEMINJAMAN</h1>
+        <h1 style="text-align: center;">LAPORAN PENILAIAN</h1>
         <table class="table">
             <thead>
                 <tr>
                     <th style="width: 10px">No</th>
-                    <th>Ruangan</th>
-                    <th>Petugas</th>
+                    <th>Nama Ruangan</th>
                     <th>Peminjam</th>
-                    <th>Tanggal Pinjam</th>
-                    <!-- <th>Surat Permohonan</th> -->
-                    <th>Status</th>
+                    <th>Kebersihan</th>
+                    <th>Kondisi Fasilitas</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $no = 1; ?>
-                <?php foreach ($data['peminjaman'] as $row) : ?>
+                <?php foreach ($data['penilaian_ruangan'] as $row) : ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $row['nama_ruangan']; ?></td>
-                        <td><?= $row['nama_petugas']; ?></td>
                         <td><?= $row['nama_peminjam']; ?></td>
-                        <td><?= $row['tanggal_pinjam']; ?></td>
-                        <!-- <td><?= $row['surat_permohonan']; ?></td> -->
-                        <td><?= $row['status']; ?></td>
+                        <td><?= $row['kebersihan']; ?></td>
+                        <td><?= $row['kondisi_fasilitas']; ?></td>
                     </tr>
                 <?php $no++;
                 endforeach; ?>
