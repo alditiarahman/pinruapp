@@ -34,7 +34,6 @@
                                 <input type="text" class="form-control" placeholder="" name="key">
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
-
                                     <a class="btn btn-outline-danger" href="<?= base_url; ?>/pembatalan"><i class="fas fa-undo-alt"></i></a>
                                 </div>
                             </div>
@@ -43,11 +42,12 @@
                 </form>
                 <table class="table table-bordered">
                     <thead>
-                        <tr>
+                        <tr style="text-align: center;">
                             <th style="width: 10px">No</th>
-                            <th>ID Peminjaman</th>
+                            <th>Ruangan</th>
                             <th>Petugas</th>
                             <th>Peminjam</th>
+                            <th>Tanggal Pinjam</th>
                             <th>Tanggal Pembatalan</th>
                             <th>Waktu Pembatalan</th>
                             <th>Alasan Pembatalan</th>
@@ -59,15 +59,16 @@
                         <?php foreach ($data['pembatalan'] as $row) : ?>
                             <tr>
                                 <td><?= $no; ?></td>
-                                <td><?= $row['id_peminjaman']; ?></td>
+                                <td><?= $row['nama_ruangan']; ?></td>
                                 <td><?= $row['nama_petugas']; ?></td>
                                 <td><?= $row['nama_peminjam']; ?></td>
+                                <td><?= $row['tanggal_pinjam']; ?></td>
                                 <td><?= $row['tanggal_pembatalan']; ?></td>
                                 <td><?= $row['waktu_pembatalan']; ?></td>
                                 <td><?= $row['alasan_pembatalan']; ?></td>
-                                <td>
-                                    <a href="<?= base_url; ?>/pembatalan/edit/<?= $row['id_pembatalan'] ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                                    <a href="<?= base_url; ?>/pembatalan/hapus/<?= $row['id_pembatalan'] ?>" class="btn btn-danger" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
+                                <td style="text-align: center;">
+                                    <a href="<?= base_url; ?>/pembatalan/edit/<?= $row['id_pembatalan'] ?>" class="btn btn-info" role="button"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= base_url; ?>/pembatalan/hapus/<?= $row['id_pembatalan'] ?>" class="btn btn-warning" role="button" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php $no++;

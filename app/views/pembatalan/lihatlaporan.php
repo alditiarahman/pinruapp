@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Laporan Pembatalan Peminjaman</title>
+    <title>Laporan Pembatalan</title>
 
     <link rel="icon" type="image/x-icon" href="<?= base_url; ?>/dist/img/logo-bawaslu.png">
 
@@ -72,20 +72,30 @@
     <section class="sheet">
         <!-- Header/Kop Surat -->
         <div class="header">
-            <img src="<?= base_url ?>/dist/img/logo-bawaslu-kalsel.png" alt="Logo" style="width: 300px; height: auto;">
-            <h2><b>Badan Pengawas Pemilihan Umum Provinsi Kalimantan Selatan</b></h2>
-            <p>Jl. RE Martadinata No.3, Kertak Baru Ilir, Kec. Banjarmasin Tengah, Kota Banjarmasin, <br>Kalimantan Selatan 70231</p>
-            <p>Telepon: (0511) 6726 437 | Email: set.kalsel@gmail.go.id</p>
+            <!-- Logo -->
+            <img src="<?= base_url ?>/dist/img/logo-bawaslu.png" alt="Logo" style="width: 90px; height: auto; float: left; margin-right: 30px;">
+            <!-- Informasi Organisasi -->
+            <div style="float: left;">
+                <h2 style="margin: 0; font-size: 18px;"><b>Badan Pengawas Pemilihan Umum Provinsi Kalimantan Selatan</b></h2>
+                <p style="margin: 5px 0;">Jl. RE Martadinata No.3, Kertak Baru Ilir, Kec. Banjarmasin Tengah,</p>
+                <p style="margin: 5px 0;">Kota Banjarmasin, Kalimantan Selatan 70231</p>
+                <p style="margin: 5px 0;">Telepon: (0511) 6726 437 | Email: set.kalsel@gmail.go.id</p>
+            </div>
+            <!-- Clearfix untuk mengatasi float -->
+            <div style="clear: both;"></div>
+            <br>
+            <hr style="border-top: 3px solid black; margin-top: 10px; margin-bottom: 10px;">
         </div>
 
-        <h1 style="text-align: center;">Laporan Pembatalan Peminjaman</h1>
+        <h1 style="text-align: center;">LAPORAN PEMBATALAN</h1>
         <table class="table">
             <thead>
                 <tr>
                     <th style="width: 10px">No</th>
-                    <th>ID Peminjaman</th>
+                    <th>Ruangan</th>
                     <th>Petugas</th>
                     <th>Peminjam</th>
+                    <th>Tanggal Pinjam</th>
                     <th>Tanggal Pembatalan</th>
                     <th>Waktu Pembatalan</th>
                     <th>Alasan Pembatalan</th>
@@ -96,9 +106,10 @@
                 <?php foreach ($data['pembatalan'] as $row) : ?>
                     <tr>
                         <td><?= $no; ?></td>
-                        <td><?= $row['id_peminjaman']; ?></td>
+                        <td><?= $row['nama_ruangan']; ?></td>
                         <td><?= $row['nama_petugas']; ?></td>
                         <td><?= $row['nama_peminjam']; ?></td>
+                        <td><?= $row['tanggal_pinjam']; ?></td>
                         <td><?= $row['tanggal_pembatalan']; ?></td>
                         <td><?= $row['waktu_pembatalan']; ?></td>
                         <td><?= $row['alasan_pembatalan']; ?></td>
@@ -107,6 +118,19 @@
                 endforeach; ?>
             </tbody>
         </table>
+        <div style="margin-top: 20px;">
+            <div style="float: right; width: 25%;">
+                <p>
+                    Banjarmasin,
+                    <br>Mengetahui
+                </p>
+                <br>
+                <br>
+                <p>
+                    <b><u>Aries Mardiono, M.Sos</u></b>
+                </p>
+            </div>
+        </div>
     </section>
     <script type="text/javascript">
         window.print();

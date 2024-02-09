@@ -61,13 +61,15 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
+                    <!-- Tanggal Pinjam diganti menjadi tanggal_peminjaman -->
                     <div class="form-group">
                         <label>Tanggal Pinjam</label>
-                        <input type="date" class="form-control" name="tanggal_peminjaman" value="<?= $data['peminjaman']['tanggal_pinjam']; ?>">
+                        <input type="date" class="form-control" name="tanggal_pinjam" value="<?= $data['peminjaman']['tanggal_pinjam']; ?>">
                     </div>
+                    <!-- Menghapus nilai value dari input file -->
                     <div class="form-group">
                         <label>Surat Permohonan</label>
-                        <input readonly type="file" class="form-control" name="surat_permohonan" value="<?= $data['peminjaman']['surat_permohonan']; ?>">
+                        <input type="file" class="form-control" name="surat_permohonan">
                     </div>
                     <div class="form-group">
                         <label>Status</label>
