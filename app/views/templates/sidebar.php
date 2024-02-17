@@ -93,6 +93,14 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="<?= base_url; ?>/pengembalian" class="nav-link">
+                                <i class="nav-icon fas fa-undo-alt"></i>
+                                <p>
+                                    Data Pengembalian
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="<?= base_url; ?>/penilaianruangan" class="nav-link">
                                 <i class="nav-icon fas fa-clipboard"></i>
                                 <p>

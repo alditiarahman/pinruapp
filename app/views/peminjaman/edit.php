@@ -69,7 +69,7 @@
                     <!-- Menghapus nilai value dari input file -->
                     <div class="form-group">
                         <label>Surat Permohonan</label>
-                        <input type="file" class="form-control" name="surat_permohonan">
+                        <input type="file" class="form-control" id="surat_permohonan" name="surat_permohonan" value="<?= $data['peminjaman']['surat_permohonan']; ?>" readonly>
                     </div>
                     <div class="form-group">
                         <label>Status</label>
