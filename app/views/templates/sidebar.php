@@ -101,6 +101,14 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="<?= base_url; ?>/perubahanjadwal" class="nav-link">
+                                <i class="nav-icon fas fa-user-clock"></i>
+                                <p>
+                                    Data Perubahan Jadwal
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="<?= base_url; ?>/penilaianruangan" class="nav-link">
                                 <i class="nav-icon fas fa-clipboard"></i>
                                 <p>

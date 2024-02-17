@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Laporan Pembatalan</title>
+    <title>Laporan Perubahan Jadwal</title>
 
     <link rel="icon" type="image/x-icon" href="<?= base_url; ?>/dist/img/logo-bawaslu.png">
 
@@ -87,7 +87,7 @@
             <hr style="border-top: 3px solid black; margin-top: 10px; margin-bottom: 10px;">
         </div>
 
-        <h1 style="text-align: center;">LAPORAN PEMBATALAN</h1>
+        <h1 style="text-align: center;">LAPORAN PERUBAHAN JADWAL</h1>
         <table class="table">
             <thead>
                 <tr>
@@ -96,23 +96,23 @@
                     <th>Petugas</th>
                     <th>Peminjam</th>
                     <th>Tanggal Pinjam</th>
-                    <th>Tanggal Pembatalan</th>
-                    <th>Waktu Pembatalan</th>
-                    <th>Alasan Pembatalan</th>
+                    <th>Tanggal Perubahan</th>
+                    <th>Alasan Perubahan</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $no = 1; ?>
-                <?php foreach ($data['pembatalan'] as $row) : ?>
+                <?php foreach ($data['perubahan_jadwal'] as $row) : ?>
                     <tr>
                         <td><?= $no; ?></td>
                         <td><?= $row['nama_ruangan']; ?></td>
                         <td><?= $row['nama_petugas']; ?></td>
                         <td><?= $row['nama_peminjam']; ?></td>
                         <td><?= $row['tanggal_pinjam']; ?></td>
-                        <td><?= $row['tanggal_pembatalan']; ?></td>
-                        <td><?= $row['waktu_pembatalan']; ?></td>
-                        <td><?= $row['alasan_pembatalan']; ?></td>
+                        <td><?= $row['tanggal_perubahan']; ?></td>
+                        <td><?= $row['alasan_perubahan']; ?></td>
+                        <td><?= $row['status']; ?></td>
                     </tr>
                 <?php $no++;
                 endforeach; ?>

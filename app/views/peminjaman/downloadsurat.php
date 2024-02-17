@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Laporan Pembatalan</title>
+    <title>Surat Keterangan Permohonan</title>
 
     <link rel="icon" type="image/x-icon" href="<?= base_url; ?>/dist/img/logo-bawaslu.png">
 
@@ -87,37 +87,35 @@
             <hr style="border-top: 3px solid black; margin-top: 10px; margin-bottom: 10px;">
         </div>
 
-        <h1 style="text-align: center;">LAPORAN PEMBATALAN</h1>
+        <h1 style="text-align: center;">SURAT KETERANGAN PERMOHONAN</h1>
+        <p>Kepada Yth,</p>
+        <?php echo $row['nama_peminjam']; ?>
+        <p>Di tempat</p>
+        <br>
+        <p>Sehubung surat yang anda kirim, perihal Permohonan Peminjaman Ruangan. Dengan detail sebagai berikut</p>
         <table class="table">
             <thead>
                 <tr>
                     <th style="width: 10px">No</th>
                     <th>Ruangan</th>
                     <th>Petugas</th>
-                    <th>Peminjam</th>
                     <th>Tanggal Pinjam</th>
-                    <th>Tanggal Pembatalan</th>
-                    <th>Waktu Pembatalan</th>
-                    <th>Alasan Pembatalan</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <?php $no = 1; ?>
-                <?php foreach ($data['pembatalan'] as $row) : ?>
-                    <tr>
-                        <td><?= $no; ?></td>
-                        <td><?= $row['nama_ruangan']; ?></td>
-                        <td><?= $row['nama_petugas']; ?></td>
-                        <td><?= $row['nama_peminjam']; ?></td>
-                        <td><?= $row['tanggal_pinjam']; ?></td>
-                        <td><?= $row['tanggal_pembatalan']; ?></td>
-                        <td><?= $row['waktu_pembatalan']; ?></td>
-                        <td><?= $row['alasan_pembatalan']; ?></td>
-                    </tr>
-                <?php $no++;
-                endforeach; ?>
+                <?php foreach ($data['peminjaman'] as $row) : ?>
+                <tr>
+                    <td><?= $no; ?></td>
+                    <td><?= $row['nama_ruangan']; ?></td>
+                    <td><?= $row['nama_petugas']; ?></td>
+                    <td><?= $row['tanggal_pinjam']; ?></td>
+                    <td><?= $row['status']; ?></td>
+                </tr>
             </tbody>
         </table>
+
         <div style="margin-top: 20px;">
             <div style="float: right; width: 30%;">
                 <p>
@@ -133,7 +131,7 @@
         </div>
     </section>
     <script type="text/javascript">
-        window.print();
+        // window.print();
         //window.onafterprint = window.close;
     </script>
 </body>

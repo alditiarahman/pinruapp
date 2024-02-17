@@ -114,9 +114,9 @@
             </tbody>
         </table>
         <div style="margin-top: 20px;">
-            <div style="float: right; width: 25%;">
+            <div style="float: right; width: 30%;">
                 <p>
-                    Banjarmasin,
+                    Banjarmasin, <?php echo date('d F Y'); ?>
                     <br>Mengetahui
                 </p>
                 <br>

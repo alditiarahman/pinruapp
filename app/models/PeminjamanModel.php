@@ -90,28 +90,6 @@ class PeminjamanModel
             return -1; // Or you can throw an exception here
         }
 
-        // Check if there is a file uploaded
-        if (!empty($_FILES['surat_permohonan']['name'])) {
-            // If there is a file uploaded, handle file upload
-            $file = $_FILES['surat_permohonan'];
-            $fileName = $file['name'];
-            $fileTmpName = $file['tmp_name'];
-            $fileError = $file['error'];
-            $fileSize = $file['size'];
-
-            if ($fileError === UPLOAD_ERR_OK) {
-                $fileDestination = 'uploads/' . $fileName;
-                move_uploaded_file($fileTmpName, $fileDestination);
-                $surat_permohonan = $fileDestination;
-            } else {
-                // Handle file upload error
-                return false; // Or you can throw an exception here
-            }
-        } else {
-            // If there is no file uploaded, keep the existing file path
-            $surat_permohonan = $data['surat_permohonan'];
-        }
-
         $query = "UPDATE peminjaman 
             SET id_ruangan=:id_ruangan, id_petugas=:id_petugas, id_peminjam=:id_peminjam, 
                 tanggal_pinjam=:tanggal_pinjam, status=:status 
@@ -127,8 +105,6 @@ class PeminjamanModel
 
         return $this->db->rowCount();
     }
-
-
 
     public function deletePeminjaman($id)
     {

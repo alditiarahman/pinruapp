@@ -1,6 +1,6 @@
 <?php
 
-class Peminjaman extends Controller
+class PerubahanJadwal extends Controller
 {
     public function __construct()
     {
@@ -13,127 +13,119 @@ class Peminjaman extends Controller
 
     public function index()
     {
-        $data['title'] = 'Data Peminjaman';
-        $data['peminjaman'] = $this->model('PeminjamanModel')->getAllPeminjaman();
+        $data['title'] = 'Data Perubahan Jadwal';
+        $data['perubahan_jadwal'] = $this->model('PerubahanJadwalModel')->getAllPerubahanJadwal();
         $this->view('templates/header', $data);
         $this->view('templates/sidebar', $data);
-        $this->view('peminjaman/index', $data);
+        $this->view('perubahanjadwal/index', $data);
         $this->view('templates/footer');
     }
 
     public function cari()
     {
-        $data['title'] = 'Data Peminjaman';
-        $data['peminjaman'] = $this->model('PeminjamanModel')->cariPeminjaman($_POST['key']);
+        $data['title'] = 'Data Perubahan Jadwal';
+        $data['perubahan_jadwal'] = $this->model('PerubahanJadwalModel')->cariPerubahanJadwal($_POST['key']);
         $data['key'] = $_POST['key'];
         $this->view('templates/header', $data);
         $this->view('templates/sidebar', $data);
-        $this->view('peminjaman/index', $data);
+        $this->view('perubahanjadwal/index', $data);
         $this->view('templates/footer');
     }
 
     public function edit($id)
     {
-        $data['title'] = 'Detail Peminjaman';
-        $data['ruangan'] = $this->model('RuanganModel')->getAllRuangan();
+        $data['title'] = 'Detail Perubahan Jadwal';
+        $data['peminjaman'] = $this->model('PeminjamanModel')->getAllPeminjaman();
         $data['petugas'] = $this->model('PetugasModel')->getAllPetugas();
         $data['peminjam'] = $this->model('PeminjamModel')->getAllPeminjam();
-        $data['peminjaman'] = $this->model('PeminjamanModel')->getPeminjamanById($id);
+        $data['perubahan_jadwal'] = $this->model('PerubahanJadwalModel')->getPerubahanJadwalById($id);
         $this->view('templates/header', $data);
         $this->view('templates/sidebar', $data);
-        $this->view('peminjaman/edit', $data);
+        $this->view('perubahanjadwal/edit', $data);
         $this->view('templates/footer');
     }
 
     public function tambah()
     {
-        $data['title'] = 'Tambah Peminjaman';
-        $data['ruangan'] = $this->model('RuanganModel')->getAllRuangan();
+        $data['title'] = 'Tambah Perubahan Jadwal';
+        $data['peminjaman'] = $this->model('PeminjamanModel')->getAllPeminjaman();
         $data['petugas'] = $this->model('PetugasModel')->getAllPetugas();
         $data['peminjam'] = $this->model('PeminjamModel')->getAllPeminjam();
         $this->view('templates/header', $data);
         $this->view('templates/sidebar', $data);
-        $this->view('peminjaman/create', $data);
+        $this->view('perubahanjadwal/create', $data);
         $this->view('templates/footer');
     }
 
-    public function simpanPeminjaman()
+    public function simpanPerubahanJadwal()
     {
-        if ($this->model('PeminjamanModel')->tambahPeminjaman($_POST) > 0) {
+        if ($this->model('PerubahanJadwalModel')->tambahPerubahanJadwal($_POST) > 0) {
             Flasher::setMessage('Berhasil', 'ditambahkan', 'success');
-            header('location: ' . base_url . '/peminjaman');
+            header('location: ' . base_url . '/perubahanjadwal');
             exit;
         } else {
             Flasher::setMessage('Gagal', 'ditambahkan', 'danger');
-            header('location: ' . base_url . '/peminjaman');
+            header('location: ' . base_url . '/perubahanjadwal');
             exit;
         }
     }
 
-    public function updatePeminjaman()
+    public function updatePerubahanJadwal()
     {
-        if ($this->model('PeminjamanModel')->updateDataPeminjaman($_POST) > 0) {
+        if ($this->model('PerubahanJadwalModel')->updateDataPerubahanJadwal($_POST) > 0) {
             Flasher::setMessage('Berhasil', 'diupdate', 'success');
-            header('location:' . base_url . '/peminjaman');
+            header('location:' . base_url . '/perubahanjadwal');
             exit;
         } else {
             Flasher::setMessage('Gagal', 'diupdate', 'danger');
-            header('location:' . base_url . '/peminjaman');
+            header('location:' . base_url . '/perubahanjadwal');
             exit;
         }
     }
 
     public function hapus($id)
     {
-        if ($this->model('PeminjamanModel')->deletePeminjaman($id) > 0) {
+        if ($this->model('PerubahanJadwalModel')->deletePerubahanJadwal($id) > 0) {
             Flasher::setMessage('Berhasil', 'dihapus', 'success');
-            header('location:' . base_url . '/peminjaman');
+            header('location:' . base_url . '/perubahanjadwal');
             exit;
         } else {
             Flasher::setMessage('Gagal', 'dihapus', 'danger');
-            header('location: ' . base_url . '/peminjaman');
+            header('location: ' . base_url . '/perubahanjadwal');
             exit;
         }
     }
 
     public function setuju($id)
     {
-        if ($this->model('PeminjamanModel')->setujuiPeminjaman($id) > 0) {
+        if ($this->model('PerubahanJadwalModel')->setujuiPerubahanJadwal($id) > 0) {
             Flasher::setMessage('Berhasil', 'disetujui', 'success');
-            header('location:' . base_url . '/peminjaman');
+            header('location:' . base_url . '/perubahanjadwal');
             exit;
         } else {
             Flasher::setMessage('Gagal', 'disetujui', 'danger');
-            header('location: ' . base_url . '/peminjaman');
+            header('location: ' . base_url . '/perubahanjadwal');
             exit;
         }
     }
 
     public function tolak($id)
     {
-        if ($this->model('PeminjamanModel')->tolakPeminjaman($id) > 0) {
+        if ($this->model('PerubahanJadwalModel')->tolakPerubahan($id) > 0) {
             Flasher::setMessage('Berhasil', 'ditolak', 'success');
-            header('location:' . base_url . '/peminjaman');
+            header('location:' . base_url . '/perubahanjadwal');
             exit;
         } else {
             Flasher::setMessage('Gagal', 'ditolak', 'danger');
-            header('location: ' . base_url . '/peminjaman');
+            header('location: ' . base_url . '/perubahanjadwal');
             exit;
         }
     }
 
     public function lihatlaporan()
     {
-        $data['title'] = 'Data Laporan Peminjaman';
-        $data['peminjaman'] = $this->model('PeminjamanModel')->getAllPeminjaman();
-        $this->view('peminjaman/lihatlaporan', $data);
-    }
-
-    public function downloadsurat($id)
-    {
-        $data['title'] = 'Data Download Surat';
-        $data['peminjam'] = $this->model('PeminjamModel')->getAllPeminjam();
-        $data['peminjaman'] = $this->model('PeminjamanModel')->getPeminjamanById($id);
-        $this->view('peminjaman/downloadsurat', $data);
+        $data['title'] = 'Data Laporan Perubahan Jadwal';
+        $data['perubahan_jadwal'] = $this->model('PerubahanJadwalModel')->getAllPerubahanJadwal();
+        $this->view('perubahanjadwal/lihatlaporan', $data);
     }
 }
