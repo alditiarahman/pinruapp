@@ -61,7 +61,7 @@
                 <p class="login-box-msg">Selamat Datang di Aplikasi Peminjaman Ruangan</p>
                 <form action="<?= base_url; ?>/login/prosesLogin" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="ketikkan username.." name="username">
+                        <input type="text" class="form-control" placeholder="Masukkan username" name="username">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="ketikkan password.." name="password">
+                        <input type="password" class="form-control" placeholder="Masukkan password" name="password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

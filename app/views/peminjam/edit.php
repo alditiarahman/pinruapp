@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1><?= $data['title']; ?></h1>
+                    <h1>Edit Data Peminjam</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -24,29 +24,27 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label>Nama Peminjam</label>
-                        <input type="text" class="form-control" placeholder="Masukkan nama peminjam..." name="nama_peminjam" value="<?= $data['peminjam']['nama_peminjam']; ?>">
+                        <input type="text" class="form-control" placeholder="Masukkan nama peminjam" name="nama_peminjam" value="<?= $data['peminjam']['nama_peminjam']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Jabatan</label>
+                        <input type="text" class="form-control" placeholder="Masukkan jabatan peminjam" name="jabatan" value="<?= $data['peminjam']['jabatan']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Instansi</label>
+                        <input type="text" class="form-control" placeholder="Masukkan asal instansi peminjam" name="instansi" value="<?= $data['peminjam']['instansi']; ?>">
                     </div>
                     <div class="form-group">
                         <label>Alamat</label>
-                        <input type="text" class="form-control" placeholder="Masukkan alamat peminjam..." name="alamat" value="<?= $data['peminjam']['alamat']; ?>">
+                        <input type="text" class="form-control" placeholder="Masukkan alamat peminjam" name="alamat" value="<?= $data['peminjam']['alamat']; ?>">
                     </div>
                     <div class="form-group">
-                        <label>Telepon</label>
-                        <input type="text" class="form-control" placeholder="Masukkan nomor telepon peminjam..." name="no_telp" value="<?= $data['peminjam']['no_telp']; ?>">
+                        <label>Nomor KTP / SIM</label>
+                        <input type="text" class="form-control" placeholder="Masukkan nomor identitas peminjam" name="no_identitas" value="<?= $data['peminjam']['no_identitas']; ?>">
                     </div>
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Masukkan email peminjam..." name="email" value="<?= $data['peminjam']['email']; ?>">
-                    </div>
-                    <div class="form-group">
-                        <label>Asal Peminjam</label>
-                        <select class="form-control" name="asal_peminjam">
-                            <option value="">Pilih</option>
-                            <option value="Masyarakat Umum" <?php if ($data['peminjam']['asal_peminjam'] == 'Masyarakat Umum') echo 'selected'; ?>>Masyarakat Umum</option>
-                            <option value="Organisasi" <?php if ($data['peminjam']['asal_peminjam'] == 'Organisasi') echo 'selected'; ?>>Organisasi</option>
-                            <option value="Forum" <?php if ($data['peminjam']['asal_peminjam'] == 'Forum') echo 'selected'; ?>>Forum</option>
-                            <option value="Internal" <?php if ($data['peminjam']['asal_peminjam'] == 'Internal') echo 'selected'; ?>>Internal</option>
-                        </select>
+                        <label>Nomor Telepon</label>
+                        <input type="text" class="form-control" placeholder="Masukkan nomor telepon peminjam" name="no_telp" value="<?= $data['peminjam']['no_telp']; ?>">
                     </div>
                 </div>
                 <!-- /.card-body -->

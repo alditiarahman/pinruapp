@@ -96,7 +96,7 @@
                     <th>Petugas</th>
                     <th>Peminjam</th>
                     <th>Tanggal Pinjam</th>
-                    <!-- <th>Surat Permohonan</th> -->
+                    <th>Keperluan</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -109,7 +109,7 @@
                         <td><?= $row['nama_petugas']; ?></td>
                         <td><?= $row['nama_peminjam']; ?></td>
                         <td><?= $row['tanggal_pinjam']; ?></td>
-                        <!-- <td><?= $row['surat_permohonan']; ?></td> -->
+                        <td><?= $row['keperluan']; ?></td>
                         <td><?= $row['status']; ?></td>
                     </tr>
                 <?php $no++;

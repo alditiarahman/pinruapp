@@ -35,7 +35,7 @@ class Peminjam extends Controller
 
     public function edit($id)
     {
-        $data['title'] = 'Detail Peminjam';
+        $data['title'] = 'Edit Peminjam';
         $data['peminjam'] = $this->model('PeminjamModel')->getPeminjamById($id);
         $this->view('templates/header', $data);
         $this->view('templates/sidebar', $data);

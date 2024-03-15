@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1><?= $data['title']; ?></h1>
+                    <h1>Edit Data Pembatalan</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group">
                         <label for="alasan_pembatalan">Alasan Pembatalan</label>
-                        <textarea class="form-control" id="alasan_pembatalan" name="alasan_pembatalan" rows="3"><?= $data['pembatalan']['alasan_pembatalan']; ?></textarea>
+                        <textarea class="form-control" id="alasan_pembatalan" placeholder="Masukkan alasan pembatalan" name="alasan_pembatalan" rows="3"><?= $data['pembatalan']['alasan_pembatalan']; ?></textarea>
                     </div>
                 </div>
                 <!-- /.card-body -->

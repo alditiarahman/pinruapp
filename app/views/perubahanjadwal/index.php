@@ -74,12 +74,6 @@
                                         <a href="<?= base_url; ?>/perubahanjadwal/edit/<?= $row['id_perubahan'] ?>" class="btn btn-info" role="button"><i class="fas fa-edit"></i></a>
                                         <a href="<?= base_url; ?>/perubahanjadwal/hapus/<?= $row['id_perubahan'] ?>" class="btn btn-warning" role="button" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>
                                         <?php if ($row['status'] === 'Menunggu') : ?>
-                                            <?php // Tombol "lihatlaporan" disembunyikan jika status adalah 'Menunggu' 
-                                            ?>
-                                        <?php else : ?>
-                                            <a href="<?= base_url; ?>/perubahanjadwal/lihatlaporan" class="btn float-left btn btn-success" target="_blank"><i class="fas fa-download"></i></a>
-                                        <?php endif; ?>
-                                        <?php if ($row['status'] === 'Menunggu') : ?>
                                             <a href="<?= base_url; ?>/perubahanjadwal/setuju/<?= $row['id_perubahan'] ?>" class="btn btn-success" role="button" onclick="return confirm('Permohonan Disetujui?');"><i class="fas fa-check"></i></a>
                                             <a href="<?= base_url; ?>/perubahanjadwal/tolak/<?= $row['id_perubahan'] ?>" class="btn btn-danger" role="button" onclick="return confirm('Permohonan Ditolak?');"><i class="fas fa-times"></i></a>
                                         <?php endif; ?>

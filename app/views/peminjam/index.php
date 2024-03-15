@@ -46,10 +46,11 @@
                         <tr style="text-align: center;">
                             <th style="width: 10px">No</th>
                             <th>Nama Peminjam</th>
+                            <th>Jabatan</th>
+                            <th>Instansi</th>
                             <th>Alamat</th>
-                            <th>Telepon</th>
-                            <th>Email</th>
-                            <th>Asal Peminjam</th>
+                            <th>Nomor KTP / SIM</th>
+                            <th>Nomor Telepon</th>
                             <th style="width: 150px">Action</th>
                         </tr>
                     </thead>
@@ -59,10 +60,11 @@
                             <tr>
                                 <td><?= $no; ?></td>
                                 <td><?= $row['nama_peminjam']; ?></td>
+                                <td><?= $row['jabatan']; ?></td>
+                                <td><?= $row['instansi']; ?></td>
                                 <td><?= $row['alamat']; ?></td>
+                                <td><?= $row['no_identitas']; ?></td>
                                 <td><?= $row['no_telp']; ?></td>
-                                <td><?= $row['email']; ?></td>
-                                <td><?= $row['asal_peminjam']; ?></td>
                                 <td style="text-align: center;">
                                     <a href="<?= base_url; ?>/peminjam/edit/<?= $row['id_peminjam'] ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
                                     <a href="<?= base_url; ?>/peminjam/hapus/<?= $row['id_peminjam'] ?>" class="btn btn-warning" onclick="return confirm('Hapus data?');"><i class="fas fa-trash"></i></a>

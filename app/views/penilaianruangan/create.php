@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label>Kondisi Fasilitas</label>
-                        <input type="text" class="form-control" name="kondisi_fasilitas">
+                        <input type="text" class="form-control" placeholder="Masukkan kondisi fasilitas ruangan" name="kondisi_fasilitas">
                     </div>
                 </div>
                 <!-- /.card-body -->

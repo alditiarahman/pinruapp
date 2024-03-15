@@ -25,13 +25,15 @@ class PeminjamModel
 
     public function tambahPeminjam($data)
     {
-        $query = "INSERT INTO peminjam(nama_peminjam, alamat, no_telp, email, asal_peminjam) VALUES (:nama_peminjam, :alamat, :no_telp, :email, :asal_peminjam)";
+        $query = "INSERT INTO peminjam(nama_peminjam, jabatan, instansi, alamat, no_identitas, no_telp) 
+                    VALUES (:nama_peminjam, :jabatan, :instansi, :alamat, :no_identitas, :no_telp)";
         $this->db->query($query);
         $this->db->bind('nama_peminjam', $data['nama_peminjam']);
+        $this->db->bind('jabatan', $data['jabatan']);
+        $this->db->bind('instansi', $data['instansi']);
         $this->db->bind('alamat', $data['alamat']);
+        $this->db->bind('no_identitas', $data['no_identitas']);
         $this->db->bind('no_telp', $data['no_telp']);
-        $this->db->bind('email', $data['email']);
-        $this->db->bind('asal_peminjam', $data['asal_peminjam']);
         $this->db->execute();
 
         return $this->db->rowCount();
@@ -39,14 +41,16 @@ class PeminjamModel
 
     public function updateDataPeminjam($data)
     {
-        $query = "UPDATE peminjam SET nama_peminjam=:nama_peminjam, alamat=:alamat, no_telp=:no_telp, email=:email, asal_peminjam=:asal_peminjam WHERE id_peminjam=:id_peminjam";
+        $query = "UPDATE peminjam SET nama_peminjam=:nama_peminjam, jabatan=:jabatan, instansi=:instansi, alamat=:alamat, no_identitas=:no_identitas, no_telp=:no_telp 
+                    WHERE id_peminjam=:id_peminjam";
         $this->db->query($query);
         $this->db->bind('id_peminjam', $data['id_peminjam']);
         $this->db->bind('nama_peminjam', $data['nama_peminjam']);
+        $this->db->bind('jabatan', $data['jabatan']);
+        $this->db->bind('instansi', $data['instansi']);
         $this->db->bind('alamat', $data['alamat']);
+        $this->db->bind('no_identitas', $data['no_identitas']);
         $this->db->bind('no_telp', $data['no_telp']);
-        $this->db->bind('email', $data['email']);
-        $this->db->bind('asal_peminjam', $data['asal_peminjam']);
         $this->db->execute();
 
         return $this->db->rowCount();

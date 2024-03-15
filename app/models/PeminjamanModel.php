@@ -45,8 +45,8 @@ class PeminjamanModel
             return -1; // Or you can throw an exception here
         }
 
-        $query = "INSERT INTO peminjaman(id_ruangan, id_petugas, id_peminjam, tanggal_pinjam, surat_permohonan, status) 
-                VALUES (:id_ruangan, :id_petugas, :id_peminjam, :tanggal_pinjam, :surat_permohonan, :status)";
+        $query = "INSERT INTO peminjaman(id_ruangan, id_petugas, id_peminjam, tanggal_pinjam, surat_permohonan, surat_pernyataan, keperluan, status) 
+                VALUES (:id_ruangan, :id_petugas, :id_peminjam, :tanggal_pinjam, :surat_permohonan, :surat_pernyataan, :keperluan, :status)";
         $this->db->query($query);
         $this->db->bind('id_ruangan', $data['id_ruangan']);
         $this->db->bind('id_petugas', $data['id_petugas']);
@@ -68,6 +68,21 @@ class PeminjamanModel
             $this->db->bind('surat_permohonan', '');
         }
         // $this->db->bind('surat_permohonan', $data['surat_permohonan']); // tambahkan binding untuk surat_permohonan
+        // Handle file upload
+        $file = $_FILES['surat_pernyataan'];
+        $fileName = $file['name'];
+        $fileTmpName = $file['tmp_name'];
+        $fileError = $file['error'];
+        $fileSize = $file['size'];
+
+        if ($fileError === UPLOAD_ERR_OK) {
+            $fileDestination = 'uploads/' . $fileName;
+            move_uploaded_file($fileTmpName, $fileDestination);
+            $this->db->bind('surat_pernyataan', $fileDestination);
+        } else {
+            $this->db->bind('surat_pernyataan', '');
+        }
+        $this->db->bind('keperluan', $data['keperluan']);
         $this->db->bind('status', $data['status']);
         $this->db->execute();
 
@@ -92,7 +107,7 @@ class PeminjamanModel
 
         $query = "UPDATE peminjaman 
             SET id_ruangan=:id_ruangan, id_petugas=:id_petugas, id_peminjam=:id_peminjam, 
-                tanggal_pinjam=:tanggal_pinjam, status=:status 
+                tanggal_pinjam=:tanggal_pinjam, keperluan=:keperluan, status=:status 
             WHERE id_peminjaman=:id_peminjaman";
         $this->db->query($query);
         $this->db->bind('id_peminjaman', $data['id_peminjaman']);
@@ -100,6 +115,7 @@ class PeminjamanModel
         $this->db->bind('id_petugas', $data['id_petugas']);
         $this->db->bind('id_peminjam', $data['id_peminjam']);
         $this->db->bind('tanggal_pinjam', $data['tanggal_pinjam']);
+        $this->db->bind('keperluan', $data['keperluan']);
         $this->db->bind('status', $data['status']);
         $this->db->execute();
 

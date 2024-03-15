@@ -88,13 +88,13 @@
             <hr style="border-top: 3px solid black; margin-top: 10px; margin-bottom: 10px;">
         </div>
 
-        <h1 style="text-align: center;">LAPORAN PENILAIAN</h1>
+        <h1 style="text-align: center;">LAPORAN PENILAIAN RUANGAN</h1>
         <table class="table">
             <thead>
                 <tr>
                     <th style="width: 10px">No</th>
                     <th>Nama Ruangan</th>
-                    <th>Peminjam</th>
+                    <th>Nama Peminjam</th>
                     <th>Kebersihan</th>
                     <th>Kondisi Fasilitas</th>
                 </tr>

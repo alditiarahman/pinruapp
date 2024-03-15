@@ -34,7 +34,7 @@ class Pengembalian extends Controller
 
     public function edit($id)
     {
-        $data['title'] = 'Detail Pengembalian';
+        $data['title'] = 'Edit Pengembalian';
         $data['pengembalian'] = $this->model('PengembalianModel')->getPengembalianById($id);
         $data['peminjaman'] = $this->model('PeminjamanModel')->getAllPeminjaman();
         $data['ruangan'] = $this->model('RuanganModel')->getAllRuangan();

@@ -57,6 +57,14 @@
                         <input type="file" class="form-control" name="surat_permohonan">
                     </div>
                     <div class="form-group">
+                        <label>Surat Pernyataan</label>
+                        <input type="file" class="form-control" name="surat_pernyataan">
+                    </div>
+                    <div class="form-group">
+                        <label>Keperluan</label>
+                        <input type="text" class="form-control" placeholder="Masukkan keperluan peminjaman" name="keperluan">
+                    </div>
+                    <div class="form-group">
                         <label>Status</label>
                         <select class="form-control" name="status">
                             <option value="Menunggu">Menunggu</option>

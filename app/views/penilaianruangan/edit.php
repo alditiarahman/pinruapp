@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1><?= $data['title']; ?></h1>
+                    <h1>Edit Data Penilaian Ruangan</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -65,7 +65,7 @@
                     </div>
                     <div class="form-group">
                         <label>Kondisi Fasilitas</label>
-                        <input type="text" class="form-control" name="kondisi_fasilitas" value="<?= $data['penilaian_ruangan']['kondisi_fasilitas']; ?>">
+                        <input type="text" class="form-control" placeholder="Masukkan kondisi fasilitas ruangan" name="kondisi_fasilitas" value="<?= $data['penilaian_ruangan']['kondisi_fasilitas']; ?>">
                     </div>
                 </div>
                 <!-- /.card-body -->

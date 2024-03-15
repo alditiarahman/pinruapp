@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1><?= $data['title']; ?></h1>
+                    <h1>Edit Data Ruangan</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -23,15 +23,15 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label>Nama Ruangan</label>
-                        <input type="text" class="form-control" placeholder="Masukkan nama ruangan..." name="nama_ruangan" value="<?= $data['ruangan']['nama_ruangan']; ?>">
+                        <input type="text" class="form-control" placeholder="Masukkan nama ruangan" name="nama_ruangan" value="<?= $data['ruangan']['nama_ruangan']; ?>">
                     </div>
                     <div class="form-group">
                         <label>Kapasitas</label>
-                        <input type="number" class="form-control" placeholder="Masukkan kapasitas ruangan..." name="kapasitas" value="<?= $data['ruangan']['kapasitas']; ?>">
+                        <input type="number" class="form-control" placeholder="Masukkan kapasitas ruangan" name="kapasitas" value="<?= $data['ruangan']['kapasitas']; ?>">
                     </div>
                     <div class="form-group">
                         <label>Fasilitas</label>
-                        <input type="text" class="form-control" placeholder="Masukkan fasilitas ruangan..." name="fasilitas" value="<?= $data['ruangan']['fasilitas']; ?>">
+                        <input type="text" class="form-control" placeholder="Masukkan fasilitas ruangan" name="fasilitas" value="<?= $data['ruangan']['fasilitas']; ?>">
                     </div>
                 </div>
                 <!-- /.card-body -->

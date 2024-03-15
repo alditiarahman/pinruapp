@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <label for="alasan_perubahan">Alasan Perubahan</label>
-                        <textarea class="form-control" id="alasan_perubahan" name="alasan_perubahan" rows="3"></textarea>
+                        <textarea class="form-control" id="alasan_perubahan" placeholder="Masukkan alasan perubahan jadwal peminjaman" name="alasan_perubahan" rows="3"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="surat_permohonan">Surat Permohonan</label>

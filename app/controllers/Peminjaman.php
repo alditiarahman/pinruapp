@@ -34,7 +34,7 @@ class Peminjaman extends Controller
 
     public function edit($id)
     {
-        $data['title'] = 'Detail Peminjaman';
+        $data['title'] = 'Edit Peminjaman';
         $data['ruangan'] = $this->model('RuanganModel')->getAllRuangan();
         $data['petugas'] = $this->model('PetugasModel')->getAllPetugas();
         $data['peminjam'] = $this->model('PeminjamModel')->getAllPeminjam();
@@ -127,13 +127,5 @@ class Peminjaman extends Controller
         $data['title'] = 'Data Laporan Peminjaman';
         $data['peminjaman'] = $this->model('PeminjamanModel')->getAllPeminjaman();
         $this->view('peminjaman/lihatlaporan', $data);
-    }
-
-    public function downloadsurat($id)
-    {
-        $data['title'] = 'Data Download Surat';
-        $data['peminjam'] = $this->model('PeminjamModel')->getAllPeminjam();
-        $data['peminjaman'] = $this->model('PeminjamanModel')->getPeminjamanById($id);
-        $this->view('peminjaman/downloadsurat', $data);
     }
 }

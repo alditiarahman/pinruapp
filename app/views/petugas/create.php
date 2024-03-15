@@ -22,23 +22,23 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label>ID Petugas</label>
-                        <input type="text" class="form-control" placeholder="Masukkan id petugas..." name="id_petugas">
+                        <input type="text" class="form-control" placeholder="Masukkan id petugas" name="id_petugas">
                     </div>
                     <div class="form-group">
                         <label>Nama Petugas</label>
-                        <input type="text" class="form-control" placeholder="Masukkan nama petugas..." name="nama_petugas">
+                        <input type="text" class="form-control" placeholder="Masukkan nama petugas" name="nama_petugas">
                     </div>
                     <div class="form-group">
                         <label>Jabatan</label>
-                        <input type="text" class="form-control" placeholder="Masukkan jabatan petugas..." name="jabatan">
+                        <input type="text" class="form-control" placeholder="Masukkan jabatan petugas" name="jabatan">
                     </div>
                     <div class="form-group">
-                        <label>No. Telepon</label>
-                        <input type="text" class="form-control" placeholder="Masukkan nomor telepon petugas..." name="no_telp">
+                        <label>Nomor Telepon</label>
+                        <input type="text" class="form-control" placeholder="Masukkan nomor telepon petugas" name="no_telp">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Masukkan email petugas..." name="email">
+                        <input type="email" class="form-control" placeholder="Masukkan email petugas" name="email">
                     </div>
                 </div>
                 <!-- /.card-body -->

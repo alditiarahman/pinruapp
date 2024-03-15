@@ -34,7 +34,7 @@ class Ruangan extends Controller
 
     public function edit($id)
     {
-        $data['title'] = 'Detail Ruangan';
+        $data['title'] = 'Edit Ruangan';
         $data['ruangan'] = $this->model('RuanganModel')->getRuanganById($id);
         $this->view('templates/header', $data);
         $this->view('templates/sidebar', $data);

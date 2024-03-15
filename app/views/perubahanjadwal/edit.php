@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1><?= $data['title']; ?></h1>
+                    <h1>Edit Data Perubahan Jadwal</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -48,7 +48,7 @@
                     </div>
                     <div class="form-group">
                         <label for="alasan_pembatalan">Alasan Perubahan</label>
-                        <textarea class="form-control" id="alasan_perubahan" name="alasan_perubahan" rows="3"><?= $data['perubahan_jadwal']['alasan_perubahan']; ?></textarea>
+                        <textarea class="form-control" id="alasan_perubahan" placeholder="Masukkan alasan perubahan jadwal peminjaman" name="alasan_perubahan" rows="3"><?= $data['perubahan_jadwal']['alasan_perubahan']; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label>Status</label>

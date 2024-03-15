@@ -58,7 +58,7 @@
                     </div>
                     <div class="form-group">
                         <label for="alasan_pembatalan">Alasan Pembatalan</label>
-                        <textarea class="form-control" id="alasan_pembatalan" name="alasan_pembatalan" rows="3"></textarea>
+                        <textarea class="form-control" id="alasan_pembatalan" placeholder="Masukkan alasan pembatalan" name="alasan_pembatalan" rows="3"></textarea>
                     </div>
                 </div>
                 <!-- /.card-body -->

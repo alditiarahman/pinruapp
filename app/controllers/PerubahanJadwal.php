@@ -34,7 +34,7 @@ class PerubahanJadwal extends Controller
 
     public function edit($id)
     {
-        $data['title'] = 'Detail Perubahan Jadwal';
+        $data['title'] = 'Edit Perubahan Jadwal';
         $data['peminjaman'] = $this->model('PeminjamanModel')->getAllPeminjaman();
         $data['petugas'] = $this->model('PetugasModel')->getAllPetugas();
         $data['peminjam'] = $this->model('PeminjamModel')->getAllPeminjam();

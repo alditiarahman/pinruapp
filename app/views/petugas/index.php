@@ -45,7 +45,7 @@
                             <th>ID Petugas</th>
                             <th>Nama Petugas</th>
                             <th>Jabatan</th>
-                            <th>No. Telepon</th>
+                            <th>Nomor Telepon</th>
                             <th>Email</th>
                             <th style="width: 150px">Action</th>
                         </tr>

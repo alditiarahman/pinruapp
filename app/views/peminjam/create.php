@@ -21,41 +21,38 @@
             <!-- form start -->
             <form role="form" action="<?= base_url; ?>/peminjam/simpanPeminjam" method="POST" enctype="multipart/form-data">
                 <div class=" card-body">
-                <div class="form-group">
-                    <label>Nama Peminjam</label>
-                    <input type="text" class="form-control" placeholder="Masukkan nama peminjam..." name="nama_peminjam">
+                    <div class="form-group">
+                        <label>Nama Peminjam</label>
+                        <input type="text" class="form-control" placeholder="Masukkan nama peminjam" name="nama_peminjam">
+                    </div>
+                    <div class="form-group">
+                        <label>Jabatan</label>
+                        <input type="text" class="form-control" placeholder="Masukkan jabatan peminjam" name="jabatan">
+                    </div>
+                    <div class="form-group">
+                        <label>Instansi</label>
+                        <input type="text" class="form-control" placeholder="Masukkan asal instansi peminjam" name="instansi">
+                    </div>
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <input type="text" class="form-control" placeholder="Masukkan alamat peminjam" name="alamat">
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor KTP / SIM</label>
+                        <input type="text" class="form-control" placeholder="Masukkan nomor identitas peminjam" name="no_identitas">
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor Telepon</label>
+                        <input type="text" class="form-control" placeholder="Masukkan nomor telepon peminjam" name="no_telp">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Alamat</label>
-                    <input type="text" class="form-control" placeholder="Masukkan alamat peminjam..." name="alamat">
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-                <div class="form-group">
-                    <label>No. Telepon</label>
-                    <input type="text" class="form-control" placeholder="Masukkan nomor telepon peminjam..." name="no_telp">
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" class="form-control" placeholder="Masukkan email peminjam..." name="email">
-                </div>
-                <div class="form-group">
-                    <label>Asal Peminjam</label>
-                    <select class="form-control" name="asal_peminjam">
-                        <option value="">Pilih</option>
-                        <option value="Masyarakat Umum">Masyarakat Umum</option>
-                        <option value="Organisasi">Organisasi</option>
-                        <option value="Forum">Forum</option>
-                        <option value="Internal">Internal</option>
-                    </select>
-                </div>
-
+            </form>
         </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-        </form>
-</div>
-</section>
-<!-- /.content -->
+    </section>
+    <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->

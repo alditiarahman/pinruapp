@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1><?= $data['title']; ?></h1>
+                    <h1>Edit Data Peminjaman</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -70,6 +70,14 @@
                     <div class="form-group">
                         <label>Surat Permohonan</label>
                         <input type="file" class="form-control" id="surat_permohonan" name="surat_permohonan" value="<?= $data['peminjaman']['surat_permohonan']; ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Surat Pernyataan</label>
+                        <input type="file" class="form-control" id="surat_pernyataan" name="surat_pernyataan" value="<?= $data['peminjaman']['surat_pernyataan']; ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Keperluan</label>
+                        <input type="text" class="form-control" name="keperluan" value="<?= $data['peminjaman']['keperluan']; ?>">
                     </div>
                     <div class="form-group">
                         <label>Status</label>

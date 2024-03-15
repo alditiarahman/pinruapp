@@ -34,7 +34,7 @@ class PenilaianRuangan extends Controller
 
     public function edit($id)
     {
-        $data['title'] = 'Detail Penilaian Ruangan';
+        $data['title'] = 'Edit Penilaian Ruangan';
         $data['ruangan'] = $this->model('RuanganModel')->getAllRuangan();
         $data['peminjam'] = $this->model('PeminjamModel')->getAllPeminjam();
         $data['penilaian_ruangan'] = $this->model('PenilaianRuanganModel')->getPenilaianRuanganById($id);

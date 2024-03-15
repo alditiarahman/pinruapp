@@ -22,15 +22,15 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label>Nama Ruangan</label>
-                        <input type="text" class="form-control" placeholder="Masukkan nama ruangan..." name="nama_ruangan">
+                        <input type="text" class="form-control" placeholder="Masukkan nama ruangan" name="nama_ruangan">
                     </div>
                     <div class="form-group">
                         <label>Kapasitas</label>
-                        <input type="number" class="form-control" placeholder="Masukkan kapasitas ruangan..." name="kapasitas">
+                        <input type="number" class="form-control" placeholder="Masukkan kapasitas ruangan" name="kapasitas">
                     </div>
                     <div class="form-group">
                         <label>Fasilitas</label>
-                        <input type="text" class="form-control" placeholder="Masukkan fasilitas ruangan..." name="fasilitas">
+                        <input type="text" class="form-control" placeholder="Masukkan fasilitas ruangan" name="fasilitas">
                     </div>
                 </div>
                 <!-- /.card-body -->

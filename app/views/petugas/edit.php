@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Halaman Petugas</h1>
+                    <h1>Edit Data Petugas</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -23,23 +23,23 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label>ID Petugas</label>
-                        <input readonly type="text" class="form-control" placeholder="Masukkan id petugas..." name="id_petugas" value="<?= $data['petugas']['id_petugas']; ?>">
+                        <input readonly type="text" class="form-control" placeholder="Masukkan id petugas" name="id_petugas" value="<?= $data['petugas']['id_petugas']; ?>">
                     </div>
                     <div class="form-group">
                         <label>Nama Petugas</label>
-                        <input type="text" class="form-control" placeholder="Masukkan nama petugas..." name="nama_petugas" value="<?= $data['petugas']['nama_petugas']; ?>">
+                        <input type="text" class="form-control" placeholder="Masukkan nama petugas" name="nama_petugas" value="<?= $data['petugas']['nama_petugas']; ?>">
                     </div>
                     <div class="form-group">
                         <label>Jabatan</label>
-                        <input type="text" class="form-control" placeholder="Masukkan jabatan petugas..." name="jabatan" value="<?= $data['petugas']['jabatan']; ?>">
+                        <input type="text" class="form-control" placeholder="Masukkan jabatan petugas" name="jabatan" value="<?= $data['petugas']['jabatan']; ?>">
                     </div>
                     <div class="form-group">
                         <label>No. Telepon</label>
-                        <input type="text" class="form-control" placeholder="Masukkan nomor telepon petugas..." name="no_telp" value="<?= $data['petugas']['no_telp']; ?>">
+                        <input type="text" class="form-control" placeholder="Masukkan nomor telepon petugas" name="no_telp" value="<?= $data['petugas']['no_telp']; ?>">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Masukkan email petugas..." name="email" value="<?= $data['petugas']['email']; ?>">
+                        <input type="email" class="form-control" placeholder="Masukkan email petugas" name="email" value="<?= $data['petugas']['email']; ?>">
                     </div>
                 </div>
                 <!-- /.card-body -->

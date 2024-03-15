@@ -34,7 +34,7 @@ class Petugas extends Controller
 
     public function edit($id)
     {
-        $data['title'] = 'Detail Petugas';
+        $data['title'] = 'Edit Petugas';
         $data['petugas'] = $this->model('PetugasModel')->getPetugasById($id);
         $this->view('templates/header', $data);
         $this->view('templates/sidebar', $data);

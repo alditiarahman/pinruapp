@@ -34,7 +34,7 @@ class Pembatalan extends Controller
 
     public function edit($id)
     {
-        $data['title'] = 'Detail Pembatalan';
+        $data['title'] = 'Edit Pembatalan';
         $data['peminjaman'] = $this->model('PeminjamanModel')->getAllPeminjaman();
         $data['petugas'] = $this->model('PetugasModel')->getAllPetugas();
         $data['peminjam'] = $this->model('PeminjamModel')->getAllPeminjam();

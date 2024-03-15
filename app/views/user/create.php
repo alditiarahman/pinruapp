@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Halaman User</h1>
+                    <h1>Tambah User</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -28,19 +28,19 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label>Nama</label>
-                        <input type="text" class="form-control" placeholder="masukkan nama..." name="nama">
+                        <input type="text" class="form-control" placeholder="Masukkan nama" name="nama">
                     </div>
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" placeholder="masukkan username..." name="username">
+                        <input type="text" class="form-control" placeholder="Masukkan username" name="username">
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="masukkan password..." name="password">
+                        <input type="password" class="form-control" placeholder="Masukkan password" name="password">
                     </div>
                     <div class="form-group">
                         <label>Ulangi Password</label>
-                        <input type="password" class="form-control" placeholder="masukkan lagi password..." name="ulangi_password">
+                        <input type="password" class="form-control" placeholder="Masukkan lagi password" name="ulangi_password">
                     </div>
                 </div>
                 <!-- /.card-body -->
